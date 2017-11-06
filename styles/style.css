@@ -1,0 +1,10 @@
+* {
+    background-color: rgba(0,0,0,0.01);
+}
+html, body {
+    box-sizing: border-box;
+}
+article {
+    width: fit-content;
+    margin: auto;
+}
