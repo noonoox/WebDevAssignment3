@@ -3,6 +3,7 @@ ob_start("ob_gzhandler");
 session_start();
 
 $credentialsFile = "./credentials.cfg";
+$credentialsRegEx = '/^(.*@.*[.].*) (.*)\n?$/m';
 
 function redirectToIndex() {
     header("Location: index.php");
@@ -23,7 +24,16 @@ if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
 if(isset($_POST['username']) && !empty($_POST['username'])) {
     if (isset($_POST['password']) && !empty($_POST['password'])) {
         $credentials = file_get_contents($credentialsFile);
-        $credentials = explode(" ", $credentials);
+        //$credentials = explode(" ", $credentials);
+        preg_match_all($credentialsRegEx, $credentials, $credentialsArr, PREG_SET_ORDER, 0);
+        foreach ($credentialsArr as $key => $value) {
+            if($_POST['username'] == $value[1] 
+                && $_POST['password'] == $value[2]) {
+                login($_POST['username']);
+            }
+        }
+        var_dump($credentialsArr);
+        $loginMsg = "Invalid login credentials";
     } else {
         $loginMsg = "Invalid login credentials";
     }
