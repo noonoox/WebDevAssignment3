@@ -8,3 +8,11 @@ article {
     width: fit-content;
     margin: auto;
 }
+
+.wrong{
+	color:red;
+}
+
+.right{
+	color:green;
+}
