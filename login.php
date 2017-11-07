@@ -3,7 +3,7 @@ ob_start("ob_gzhandler");
 session_start();
 
 $credentialsFile = "./credentials.cfg";
-$credentialsRegEx = '/^(.*@.*[.].*) (.*)\n?$/m';
+$credentialsRegEx = '/^(\S*@\S*[.]\S*) (\S*)\s*$/m';
 
 function redirectToIndex() {
     header("Location: index.php");
