@@ -34,29 +34,31 @@ $answer = ($addition == 1) ? $val1 + $val2 : $val1 - $val2;?>
 	
 	<body>
 		<?php doHeader(); ?>
-		<article>
-		<?php 
-		
-		if(isset($_POST["answer"]) && !empty($_POST["answer"])){
-			if($_POST["input"] == $_POST["answer"]){
-				$_SESSION["score"]++;
-				$_SESSION["attempts"]++;
+		<article id="game">
+			<section>
+				<?php 
 				
-				echo '<h3 class="right">Correct! ';
-			}else{
-				echo '<h3 class="wrong">Wrong! Correct answer was ' . $_POST["answer"];
-			}
-		}
-		
-		echo "<h3>Score:" . $_SESSION["score"] . "/" . $_SESSION["attempts"] . "</h3>";
-		
-		echo "<h3>What is " . $val1 . (($addition == 1) ? " + " : " - ") . $val2 . "</h3>"; ?>
-		
-		<form method="post" action="index.php">
-			<input name="input" required />
-			<?php echo '<input name="answer" value="' . $answer . '" hidden autofocus />';?>
-			<button type="submit">Submit</button>
-		</form>
+				if(isset($_POST["answer"]) && !empty($_POST["answer"])){
+					if($_POST["input"] == $_POST["answer"]){
+						$_SESSION["score"]++;
+						$_SESSION["attempts"]++;
+						
+						echo '<h3 class="right">Correct! ';
+					}else{
+						echo '<h3 class="wrong">Wrong! Correct answer was ' . $_POST["answer"];
+					}
+				}
+				
+				echo "<h3>Score:" . $_SESSION["score"] . "/" . $_SESSION["attempts"] . "</h3>";
+				
+				echo "<h3>What is " . $val1 . (($addition == 1) ? " + " : " - ") . $val2 . "</h3>"; ?>
+				
+				<form method="post" action="index.php">
+					<input name="input" required />
+					<?php echo '<input name="answer" value="' . $answer . '" hidden autofocus />';?>
+					<button type="submit">Submit</button>
+				</form>
+			</section>
 		</article>
 		<?php doFooter(); ?>
 	</body>

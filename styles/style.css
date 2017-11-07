@@ -1,8 +1,9 @@
 * {
-    background-color: rgba(0,0,0,0.01);
+    box-sizing: border-box;
+    //background-color: rgba(0,0,0,0.01);
 }
 html, body {
-    box-sizing: border-box;
+    
     width: 100vw;
     height: 100vh;
     padding: 0;
@@ -21,13 +22,33 @@ nav > * {
     vertical-align: center;
     display: inline-flex;
 }
+header, article, footer {
+    background-color: rgba(32,32,64,0.1);
+}
 footer {
 
 }
 article {
+    border: 0.1em solid rgba(0,0,0,0.1);
+    border-top: 0;
+    border-bottom: 0;
+    padding: 1em;
+    box-shadow: black 1em 0em 1em -1em inset, black -1em 0em 1em -1em inset;
     flex-grow: 1;
+    width: 30em;
+    padding: auto;
+    margin: auto;
+}
+
+section {
     width: fit-content;
     margin: auto;
+    padding: 1em;
+    border-radius: 1em;
+    background-color: rgb(148, 196, 230);
+}
+article > * {
+    box-shadow: black 0.25em 0.25em 0.4em;
 }
 .spacer {
     flex-grow: 1;
@@ -45,11 +66,15 @@ article#login {
     
 }
 
-article#login > form {
-    border: rgba(0,0,0,0.5) 0.25em solid;
+article#login > section {
+    width: fit-content;
+    margin: auto;
     padding: 1em;
     border-radius: 1em;
-    background: rgb(232, 236, 238);
     justify-content: right;
     text-align: right;
+}
+
+article#game > section {
+    
 }

@@ -51,7 +51,8 @@ if(isset($_POST['username']) && !empty($_POST['username'])) {
 <body>
     <?php doHeader(); ?>
 <article id="login">
-    <form method="post">
+    <section>
+        <form method="post">
     <?php 
     if(isset($loginMsg)) { ?>
     <h3><?php echo $loginMsg; ?></h3>
@@ -66,6 +67,7 @@ if(isset($_POST['username']) && !empty($_POST['username'])) {
     </div>
     <input type="submit">
 </form>
+    </section>
 </article>
 <?php doFooter(); ?>
 </body>
