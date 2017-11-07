@@ -54,8 +54,8 @@ $answer = ($addition == 1) ? $val1 + $val2 : $val1 - $val2;?>
 				echo "<h3>What is " . $val1 . (($addition == 1) ? " + " : " - ") . $val2 . "</h3>"; ?>
 				
 				<form method="post" action="index.php">
-					<input name="input" required />
-					<?php echo '<input name="answer" value="' . $answer . '" hidden autofocus />';?>
+					<input name="input" required autofocus />
+					<?php echo '<input name="answer" value="' . $answer . '" hidden />';?>
 					<button type="submit">Submit</button>
 				</form>
 			</section>

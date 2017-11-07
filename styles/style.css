@@ -23,6 +23,7 @@ nav > * {
     display: inline-flex;
 }
 header, article, footer {
+    padding: 1em;
     background-color: rgba(32,32,64,0.1);
 }
 footer {
@@ -39,13 +40,16 @@ article {
     padding: auto;
     margin: auto;
 }
-
 section {
     width: fit-content;
     margin: auto;
     padding: 1em;
     border-radius: 1em;
     background-color: rgb(148, 196, 230);
+}
+h1, h2, h3, h4 {
+    padding: 0;
+    margin: 0;
 }
 article > * {
     box-shadow: black 0.25em 0.25em 0.4em;
