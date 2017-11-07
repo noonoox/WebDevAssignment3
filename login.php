@@ -2,6 +2,8 @@
 ob_start("ob_gzhandler");
 session_start();
 
+include("includes/htmlTemplate.php");
+
 $credentialsFile = "./credentials.cfg";
 $credentialsRegEx = '/^(\S*@\S*[.]\S*) (\S*)\s*$/m';
 
@@ -44,10 +46,10 @@ if(isset($_POST['username']) && !empty($_POST['username'])) {
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <?php doHead(); ?>
 </head>
 <body>
-    <?php include("./includes/nav.html") ?>
+    <?php doHeader(); ?>
 <article id="login">
     <form method="post">
     <?php 
@@ -56,7 +58,7 @@ if(isset($_POST['username']) && !empty($_POST['username'])) {
     <?php } ?>
     <div>
         <label for="username">Username</label>
-        <input type="text" name="username">
+        <input type="text" name="username" autofocus>
     </div>
     <div>
         <label for="password">Password</label>
@@ -65,6 +67,7 @@ if(isset($_POST['username']) && !empty($_POST['username'])) {
     <input type="submit">
 </form>
 </article>
+<?php doFooter(); ?>
 </body>
 </html>
 <?

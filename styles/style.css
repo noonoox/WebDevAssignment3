@@ -3,10 +3,34 @@
 }
 html, body {
     box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+nav > * {
+    vertical-align: center;
+    display: inline-flex;
+}
+footer {
+
 }
 article {
+    flex-grow: 1;
     width: fit-content;
     margin: auto;
+}
+.spacer {
+    flex-grow: 1;
 }
 
 .wrong{
@@ -15,4 +39,17 @@ article {
 
 .right{
 	color:green;
+}
+
+article#login {
+    
+}
+
+article#login > form {
+    border: rgba(0,0,0,0.5) 0.25em solid;
+    padding: 1em;
+    border-radius: 1em;
+    background: rgb(232, 236, 238);
+    justify-content: right;
+    text-align: right;
 }
